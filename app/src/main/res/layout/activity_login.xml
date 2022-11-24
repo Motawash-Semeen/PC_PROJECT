@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/colorAccent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
@@ -12,42 +13,71 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Usernamer: "
             android:textSize="20sp"
+            android:textColor="#ffffff"
             />
         <EditText
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Enter your Username"
+            android:textColorHint="#ffffff"
+            android:ems="10"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Password: "
             android:textSize="20sp"
+            android:textColor="#ffffff"
+
             />
         <EditText
+            android:id="@+id/pass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Enter your Username"
+            android:ems="10"
+            android:textColorHint="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
             />
     </LinearLayout>
 
     <Button
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lOGIN"
+        android:text="LOGIN"
         android:textAllCaps="false"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#ffffff"
+        />
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not Registered? Register now"
+        android:textSize="10sp"
+        android:textAllCaps="false"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#0000EE"
         />
 
 </LinearLayout>
