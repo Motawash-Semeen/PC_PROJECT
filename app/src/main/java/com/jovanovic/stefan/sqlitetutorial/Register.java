@@ -35,16 +35,26 @@ public class Register extends AppCompatActivity {
         pass = findViewById(R.id.p1_name);
         b1 = findViewById(R.id.buu1);
 
+
+
        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 checkthedata();
 
-                Intent intent = new Intent(Register.this, Login.class);
-                startActivity(intent);
+
+               if(x==false){
+                    Intent intent = new Intent(Register.this, Login.class);
+                    startActivity(intent);
+              }
+
+
             }
         });
     }
+    boolean x=false;
+
 
     boolean isEmpty(EditText text) {
         CharSequence string = text.getText().toString();
@@ -55,23 +65,29 @@ public class Register extends AppCompatActivity {
         if (isEmpty(fname)) {
             Toast t = Toast.makeText(this, "You must enter first name to register!", Toast.LENGTH_SHORT);
             t.show();
+            x=true;
         }
 
         if (isEmpty(lname)) {
             Toast t = Toast.makeText(this, "You must enter last name to register!", Toast.LENGTH_SHORT);
             t.show();
+            x=true;
         }
 
         if (isEmpty(uname)) {
             uname.setError("You must enter username to register!");
+            x=true;
         }
 
         if (isEmpty(pass)) {
             pass.setError("You must enter password to register!");
+            x=true;
         }
         if (isEmpty(em)) {
             em.setError("You must enter email to register!");
+            x=true;
         }
+
 
     }
 }
