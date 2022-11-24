@@ -6,11 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="@drawable/book1"
+    android:background="@color/colorAccent"
     tools:context=".Register">
-
-
-
 
     <EditText
         android:id="@+id/f1_name"
@@ -18,22 +15,25 @@
         android:layout_height="45dp"
         android:layout_marginTop="145dp"
         android:hint="@string/f1"
-        android:background="@color/cardview_light_background"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:inputType="textCapWords" />
     <EditText
         android:id="@+id/l1_name"
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:hint="@string/l1"
-        android:background="@color/cardview_light_background"
         android:layout_marginTop="15dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:inputType="textCapWords" />
     <EditText
         android:id="@+id/u1_name"
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
-        android:background="@color/cardview_light_background"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:hint="@string/u1"
         />
     <EditText
@@ -41,7 +41,8 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
-        android:background="@color/cardview_light_background"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:hint="@string/e1"
         />
     <EditText
@@ -49,7 +50,8 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="15dp"
-        android:background="@color/cardview_light_background"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
         android:hint="@string/p1"
          />
 
@@ -57,14 +59,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimary"
-        android:background="#2C9189"
-        android:hint="@string/bu1"
-
+        android:text="Sign up"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimaryDark"
         />
-
-
-
-
 
 </LinearLayout>
