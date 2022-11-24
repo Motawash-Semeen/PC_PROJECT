@@ -8,7 +8,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/#Root/$RECYCLE.BIN/PC_PROJECT/app/src/main/res/layout/activity_add.xml" value="0.3625" />
         <entry key="..\:/#Root/$RECYCLE.BIN/PC_PROJECT/app/src/main/res/layout/activity_home.xml" value="0.3625" />
+        <entry key="..\:/#Root/$RECYCLE.BIN/PC_PROJECT/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/#Root/$RECYCLE.BIN/PC_PROJECT/app/src/main/res/layout/activity_update.xml" value="0.3625" />
+        <entry key="..\:/#Root/$RECYCLE.BIN/PC_PROJECT/app/src/main/res/layout/my_row.xml" value="0.3625" />
       </map>
     </option>
   </component>

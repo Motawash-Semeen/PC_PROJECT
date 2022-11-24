@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,12 +49,16 @@ public class UpdateActivity extends AppCompatActivity {
                 author = author_input.getText().toString().trim();
                 pages = pages_input.getText().toString().trim();
                 myDB.updateData(id, title, author, pages);
+
+                Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 confirmDialog();
+
             }
         });
 
@@ -88,6 +93,8 @@ public class UpdateActivity extends AppCompatActivity {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
                 myDB.deleteOneRow(id);
                 finish();
+                Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
