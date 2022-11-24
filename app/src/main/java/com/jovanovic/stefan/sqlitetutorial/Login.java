@@ -28,8 +28,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+
+        String name = username.getText().toString();
+        String password = pass.getText().toString();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("username", name);
+        bundle.putString("password", password);
+
         if(view.getId() == R.id.login){
             Intent intent = new Intent(Login.this, MainActivity.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
         if(view.getId() == R.id.register){
