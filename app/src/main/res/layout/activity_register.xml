@@ -11,6 +11,7 @@
 
 
 
+
     <EditText
         android:id="@+id/f1_name"
         android:layout_width="200dp"
@@ -65,6 +66,5 @@
 
 
 
-    
 
 </LinearLayout>
