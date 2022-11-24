@@ -96,6 +96,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+        db.delete("SQLITE_SEQUENCE","NAME = ?",new String[]{TABLE_NAME});
     }
 
 }
