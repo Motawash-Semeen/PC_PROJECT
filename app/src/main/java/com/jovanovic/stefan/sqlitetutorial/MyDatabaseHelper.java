@@ -20,7 +20,6 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_TITLE = "book_title";
     private static final String COLUMN_AUTHOR = "book_author";
     private static final String COLUMN_PAGES = "book_pages";
-    private static final String COLUMN_AMOUNT = "book_amount";
 
     MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -33,8 +32,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
                         " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_TITLE + " TEXT, " +
                         COLUMN_AUTHOR + " TEXT, " +
-                        COLUMN_PAGES + " INTEGER, "+
-                        COLUMN_AMOUNT + " INTEGER);";
+                        COLUMN_PAGES + " INTEGER);";
         db.execSQL(query);
     }
     @Override
@@ -43,14 +41,13 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addBook(String title, String author, int pages, int amount){
+    void addBook(String title, String author, int pages){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put(COLUMN_TITLE, title);
         cv.put(COLUMN_AUTHOR, author);
         cv.put(COLUMN_PAGES, pages);
-        cv.put(COLUMN_AMOUNT, amount);
         long result = db.insert(TABLE_NAME,null, cv);
         if(result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
@@ -70,13 +67,12 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    void updateData(String row_id, String title, String author, String pages, String amount){
+    void updateData(String row_id, String title, String author, String pages){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_TITLE, title);
         cv.put(COLUMN_AUTHOR, author);
         cv.put(COLUMN_PAGES, pages);
-        cv.put(COLUMN_AMOUNT, amount);
 
         long result = db.update(TABLE_NAME, cv, "_id=?", new String[]{row_id});
         if(result == -1){
@@ -100,6 +96,8 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+        db.delete("SQLITE_SEQUENCE","NAME = ?",new String[]{TABLE_NAME});
+
     }
 
 }

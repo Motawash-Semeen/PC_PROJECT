@@ -1,3 +1,2 @@
 SQLite + Android - Complete Tutorial
 
-
