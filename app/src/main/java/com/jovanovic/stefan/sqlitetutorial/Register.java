@@ -4,6 +4,7 @@ import static android.text.TextUtils.isEmpty;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -38,6 +39,9 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkthedata();
+
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
             }
         });
     }
