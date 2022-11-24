@@ -96,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.my_menu, menu);
+        MenuItem item = menu.findItem(R.id.name);
+        Bundle bundle = getIntent().getExtras();
+        if(bundle!=null){
+            String uname = bundle.getString("username");
+            item.setTitle(uname);
+        }
         return super.onCreateOptionsMenu(menu);
     }
 
