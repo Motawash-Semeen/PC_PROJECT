@@ -22,6 +22,7 @@ public class Register extends AppCompatActivity {
     EditText pass;
     Button b1;
 
+    MyDatabaseHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class Register extends AppCompatActivity {
         pass = findViewById(R.id.p1_name);
         b1 = findViewById(R.id.buu1);
 
-
+        myDB = new MyDatabaseHelper(Register.this);
 
        b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +46,27 @@ public class Register extends AppCompatActivity {
 
 
                if(x==false){
-                    Intent intent = new Intent(Register.this, Login.class);
-                    startActivity(intent);
+
+                   String user =uname.getText().toString();
+                   String email =em.getText().toString();
+                   String passw =pass.getText().toString();
+                   Boolean cu=myDB.checkUSERNAME(user);
+                   Boolean em1=myDB.checkemail(email);
+                   if(cu==true) Toast.makeText(Register.this,"Username already exists",Toast.LENGTH_SHORT).show();
+                   else if(em1==true) Toast.makeText(Register.this,"Email already exists",Toast.LENGTH_SHORT).show();
+                    else  {
+                        Boolean insert=myDB.insertuser(user,email,passw);
+                        if(insert==true){
+                            Toast.makeText(Register.this,"Registered successfully",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Register.this, Login.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(Register.this,"Sorry,registration unsuccessful",Toast.LENGTH_SHORT).show();
+                        }
+
+                   }
+
+
               }
 
 
