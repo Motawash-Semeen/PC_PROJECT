@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,9 +43,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         bundle.putString("password", password);
 
         if(view.getId() == R.id.login){
-            Intent intent = new Intent(Login.this, MainActivity.class);
-            intent.putExtras(bundle);
-            startActivity(intent);
+
+            Boolean result = databasehelper.findPassword(name, password);
+            if(result==true){
+                Intent intent = new Intent(Login.this, MainActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Wrong Username or password", Toast.LENGTH_SHORT).show();
+            }
+
+
         }
         if(view.getId() == R.id.register){
             Intent intent = new Intent(Login.this, Register.class);
