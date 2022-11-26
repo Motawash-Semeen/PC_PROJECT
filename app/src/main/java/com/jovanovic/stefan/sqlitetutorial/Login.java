@@ -3,6 +3,7 @@ package com.jovanovic.stefan.sqlitetutorial;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
+    MyDatabaseHelper databasehelper;
     Button login, register;
     TextView username, pass;
     @Override
@@ -21,6 +23,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         register = findViewById(R.id.register);
         username = findViewById(R.id.username);
         pass = findViewById(R.id.pass);
+
+        databasehelper = new MyDatabaseHelper(this);
+        SQLiteDatabase sqLiteDatabase = databasehelper.getWritableDatabase();
 
         login.setOnClickListener(this);
         register.setOnClickListener(this);
