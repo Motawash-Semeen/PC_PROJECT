@@ -22,40 +22,56 @@ public class Register extends AppCompatActivity {
     EditText pass;
     Button b1;
 
-    MyDatabaseHelper myDB;
+    //MyDatabaseHelper myDB;
+    dbhandler d1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        fname = findViewById(R.id.f1_name);
-        lname = findViewById(R.id.l1_name);
-        uname = findViewById(R.id.u1_name);
-        em = findViewById(R.id.e1_name);
-        pass = findViewById(R.id.p1_name);
-        b1 = findViewById(R.id.buu1);
+        fname =(EditText) findViewById(R.id.f1_name);
+        lname =(EditText)  findViewById(R.id.l1_name);
+        uname = (EditText) findViewById(R.id.u1_name);
+        em =(EditText)  findViewById(R.id.e1_name);
+        pass =(EditText)  findViewById(R.id.p1_name);
+        b1 = (Button) findViewById(R.id.buu1);
 
-        myDB = new MyDatabaseHelper(Register.this);
+        d1 = new dbhandler(this);
 
        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                checkthedata();
+                String f1=fname.getText().toString();
+                String l1 =lname.getText().toString();
+                String user =uname.getText().toString();
+                String email =em.getText().toString();
+                String passw =pass.getText().toString();
+              if(f1.equals(""))
+                {
+                    Toast.makeText(Register.this, "You must enter first name to register!", Toast.LENGTH_SHORT).show();
+                }
+              else  if(l1.equals(""))
+                {
+                    Toast.makeText(Register.this, "You must enter last name to register!", Toast.LENGTH_SHORT).show();
+                }
+               else  if(user.equals(""))
+                {
+                    Toast.makeText(Register.this, "You must enter  user name to register!", Toast.LENGTH_SHORT).show();
+                }
+               else  if(email.equals(""))
+                {
+                    Toast.makeText(Register.this, "You must enter email to register!", Toast.LENGTH_SHORT).show();
+                }
+             else   if(passw.equals(""))
+                {
+                    Toast.makeText(Register.this, "You must enter password to register!", Toast.LENGTH_SHORT).show();
+                }
+           else
+               {
 
-
-               if(x==false){
-
-                   String user =uname.getText().toString();
-                   String email =em.getText().toString();
-                   String passw =pass.getText().toString();
-                   Boolean cu=myDB.checkUSERNAME(user);
-                   Boolean em1=myDB.checkemail(email);
-                   if(cu==true) Toast.makeText(Register.this,"Username already exists",Toast.LENGTH_SHORT).show();
-                   else if(em1==true) Toast.makeText(Register.this,"Email already exists",Toast.LENGTH_SHORT).show();
-                    else  {
-                        Boolean insert=myDB.insertuser(user,email,passw);
+                        Boolean insert=d1.insertuser(user,email,passw);
                         if(insert==true){
                             Toast.makeText(Register.this,"Registered successfully",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(Register.this, Login.class);
@@ -63,14 +79,13 @@ public class Register extends AppCompatActivity {
                         }else{
                             Toast.makeText(Register.this,"Sorry,registration unsuccessful",Toast.LENGTH_SHORT).show();
                         }
-
-                   }
+              //    }
 
 
               }
 
 
-            }
+          }
         });
     }
     boolean x=false;
@@ -81,33 +96,4 @@ public class Register extends AppCompatActivity {
         return TextUtils.isEmpty(string);
     }
 
-    void checkthedata() {
-        if (isEmpty(fname)) {
-            Toast t = Toast.makeText(this, "You must enter first name to register!", Toast.LENGTH_SHORT);
-            t.show();
-            x=true;
-        }
-
-        if (isEmpty(lname)) {
-            Toast t = Toast.makeText(this, "You must enter last name to register!", Toast.LENGTH_SHORT);
-            t.show();
-            x=true;
-        }
-
-        if (isEmpty(uname)) {
-            uname.setError("You must enter username to register!");
-            x=true;
-        }
-
-        if (isEmpty(pass)) {
-            pass.setError("You must enter password to register!");
-            x=true;
-        }
-        if (isEmpty(em)) {
-            em.setError("You must enter email to register!");
-            x=true;
-        }
-
-
-    }
 }
