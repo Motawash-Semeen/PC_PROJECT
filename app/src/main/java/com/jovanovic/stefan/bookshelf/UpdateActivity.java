@@ -1,4 +1,4 @@
-package com.jovanovic.stefan.sqlitetutorial;
+package com.jovanovic.stefan.bookshelf;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;

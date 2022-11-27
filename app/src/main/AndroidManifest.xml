@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jovanovic.stefan.sqlitetutorial">
+    package="com.jovanovic.stefan.bookshelf">
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Register"
+            android:name="com.jovanovic.stefan.bookshelf.Register"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.jovanovic.stefan.bookshelf.Login"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name="com.jovanovic.stefan.bookshelf.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,14 +25,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UpdateActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.jovanovic.stefan.bookshelf.UpdateActivity"
+            android:parentActivityName="com.jovanovic.stefan.bookshelf.MainActivity" />
         <activity
-            android:name=".AddActivity"
+            android:name="com.jovanovic.stefan.bookshelf.AddActivity"
             android:label="Add Book"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.jovanovic.stefan.bookshelf.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.jovanovic.stefan.bookshelf.MainActivity"
             android:label="Book Library">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
