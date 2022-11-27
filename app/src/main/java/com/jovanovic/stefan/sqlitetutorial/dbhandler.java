@@ -59,31 +59,31 @@ public class dbhandler extends SQLiteOpenHelper {
             return true;
         }
     }
-    public Boolean checkUSERNAME(String Username){
-
-        SQLiteDatabase db1 = this.getWritableDatabase();
-        Cursor cursor = db1.rawQuery("select * from TABLE_NAME1 where Username= ?",new String[]{Username});
-        if(cursor.getCount()>0)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public Boolean checkemail(String Email){
-
-        SQLiteDatabase db1 = this.getWritableDatabase();
-        Cursor cursor = db1.rawQuery("select * from TABLE_NAME1 where Email= ?",new String[]{Email});
-        if(cursor.getCount()>0)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
+//    public Boolean checkUSERNAME(String Username){
+//
+//        SQLiteDatabase db1 = this.getWritableDatabase();
+//        Cursor cursor = db1.rawQuery("select * from TABLE_NAME1 where Username= ?",new String[]{Username});
+//        if(cursor.getCount()>0)
+//        {
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    }
+//
+//    public Boolean checkemail(String Email){
+//
+//        SQLiteDatabase db1 = this.getWritableDatabase();
+//        Cursor cursor = db1.rawQuery("select * from TABLE_NAME1 where Email= ?",new String[]{Email});
+//        if(cursor.getCount()>0)
+//        {
+//            return true;
+//        }
+//        else{
+//            return false;
+//        }
+//    }
 
 
     public  Boolean findPassword(String name, String pass){
