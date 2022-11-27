@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
-    MyDatabaseHelper databasehelper;
+    dbhandler databasehelper;
     Button login, register;
     TextView username, pass;
     @Override
@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         username = findViewById(R.id.username);
         pass = findViewById(R.id.pass);
 
-        databasehelper = new MyDatabaseHelper(this);
+        databasehelper = new dbhandler(this);
         SQLiteDatabase sqLiteDatabase = databasehelper.getWritableDatabase();
 
         login.setOnClickListener(this);

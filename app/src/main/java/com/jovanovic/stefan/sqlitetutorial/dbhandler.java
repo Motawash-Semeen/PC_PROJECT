@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -82,6 +83,29 @@ public class dbhandler extends SQLiteOpenHelper {
         else{
             return false;
         }
+    }
+
+
+    public  Boolean findPassword(String name, String pass){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+TABLE_NAME1,null);
+        Boolean result = false;
+
+        if(cursor.getCount()==0){
+            Toast.makeText(context, "No data is found", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            while(cursor.moveToNext()){
+                String username = cursor.getString(0);
+                String password = cursor.getString(2);
+
+                if(username.equals(name) && password.equals(pass)){
+                    result = true;
+                    break;
+                }
+            }
+        }
+        return result;
     }
 
 
