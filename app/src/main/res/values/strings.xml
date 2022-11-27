@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SqliteTutorial</string>
+    <string name="app_name">Book Shelf</string>
     <string name="f1">First name</string>
     <string name="l1">Last name</string>
     <string name="e1">Email</string>
