@@ -14,7 +14,7 @@
     <string name="user">Usernamer: </string>
     <string name="user_hint">Enter your Username</string>
     <string name="pass">Password: </string>
-    <string name="pass_hint">Enter your Username</string>
+    <string name="pass_hint">Enter your Password</string>
     <string name="login">LOGIN</string>
     <string name="reg">Not Registered? Register now</string>
     <string name="signup">Sign up</string>
