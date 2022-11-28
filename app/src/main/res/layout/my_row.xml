@@ -21,7 +21,7 @@
                 android:id="@+id/book_id_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="@string/number"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#000"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:text="Title 1"
+                android:text="@string/head_title"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#000"
@@ -46,7 +46,7 @@
                 android:id="@+id/book_author_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Author1"
+                android:text="@string/author_title"
                 app:layout_constraintStart_toStartOf="@+id/book_title_txt"
                 app:layout_constraintTop_toBottomOf="@+id/book_title_txt" />
 
@@ -54,7 +54,7 @@
                 android:id="@+id/book_pages_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="120"
+                android:text="@string/num_page"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
