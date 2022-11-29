@@ -8,7 +8,7 @@ import android.os.Handler;
 
 public class Home extends AppCompatActivity {
 
-    private static int TIME_OUT = 4000;
+    private static int TIME_OUT = 3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
